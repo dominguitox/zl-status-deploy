@@ -1,0 +1,7 @@
+Options -Indexes -MultiViews
+RewriteEngine On
+RewriteRule ^status$ status/index.html [END]
+<FilesMatch "^public-status\.json$">
+  Header set Cache-Control "no-store, max-age=0"
+  Header set X-Content-Type-Options "nosniff"
+</FilesMatch>
